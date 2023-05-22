@@ -1,4 +1,4 @@
-# RozkladJazdy
+# TrainSchedule-WPF
 
 ### About The Project
 
@@ -7,7 +7,6 @@ The app allows the user to search for train connections with multiple conditions
 
 ### Built With
 
-* .NET Framework 4.7.2 
 * WPF
 * SQLite
 * Dapper
