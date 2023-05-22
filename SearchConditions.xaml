@@ -1,0 +1,126 @@
+﻿<UserControl x:Class="UI.SearchConditions"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:input="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:wpfTool="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+    xmlns:local="clr-namespace:UI"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <Image x:Key="Change" Source="Resources\Change.png"/>
+    </UserControl.Resources>
+    <Grid Height="600" Width="800">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="147*"/>
+            <ColumnDefinition Width="18*"/>
+            <ColumnDefinition Width="629*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="FromStationLabel" Content="{DynamicResource SearchConditions_FromStationLabel}" HorizontalAlignment="Left" Margin="35,22,0,0" VerticalAlignment="Top" FontSize="30" RenderTransformOrigin="1.224,0.504" Foreground="#FF2196F3" FontWeight="SemiBold"/>
+        <Label x:Name="ToStationLabel" Content="{DynamicResource SearchConditions_ToStationLabel}" HorizontalAlignment="Left" Margin="36,122,0,0" VerticalAlignment="Top" FontSize="30" Foreground="#FF2196F3" FontWeight="SemiBold"/>
+        <Label x:Name="DateLabel" Content="{DynamicResource SearchConditions_DateLabel}" HorizontalAlignment="Left" Margin="36,222,0,0" VerticalAlignment="Top" FontSize="30" Foreground="#FF2196F3" FontWeight="SemiBold"/>
+        <Label x:Name="TimeLabel" Content="{DynamicResource SearchConditions_TimeLabel}" HorizontalAlignment="Left" Margin="112.6,222,0,0" VerticalAlignment="Top" FontSize="30" Grid.Column="2" Foreground="#FF2196F3" FontWeight="SemiBold"/>
+
+        <input:AutoCompleteBox x:Name="FromStationTextbox" HorizontalAlignment="Left" VerticalAlignment="Top" Text="{DynamicResource SearchConditions_DefaultTextbox}" FontSize="32" Margin="36,72,0,0" Width="400" Height="50" 
+                               Grid.ColumnSpan="3"  GotFocus="FromStationTextbox_GotFocus" LostFocus="FromStationTextbox_LostFocus" MinimumPrefixLength="2" Foreground="#3FFFFFFF" Background="#FF93C1F1" BorderBrush="White"/>
+        <input:AutoCompleteBox x:Name="ToStationTextbox" HorizontalAlignment="Left" Height="50" Margin="36,172,0,0" Text="{DynamicResource SearchConditions_DefaultTextbox}" VerticalAlignment="Top" Width="400" FontSize="32" 
+                               Grid.ColumnSpan="3" GotFocus="ToStationTextbox_GotFocus" LostFocus="ToStationTextbox_LostFocus" MinimumPrefixLength="2" Foreground="#3FFFFFFF" Background="#FF93C1F1" BorderBrush="White"/>
+
+        <wpfTool:DateTimePicker FontSize="32" TextAlignment="Center" Height="50" Margin="36,272,539,0" VerticalAlignment="Top" x:Name="ConnectionDatePicker" 
+                                Format="ShortDate" Grid.ColumnSpan="3" AllowSpin="False" ShowButtonSpinner="False" TimePickerAllowSpin="False" TimePickerShowButtonSpinner="False" 
+                                TimePickerVisibility="Collapsed" AutoCloseCalendar="True" CalendarWidth="300" Foreground="White" Background="#FF93C1F1" BorderBrush="White"/>
+        <wpfTool:DateTimePicker FontSize="32" TextAlignment="Center" HorizontalAlignment="Left" Height="50" Margin="111.6,272,0,0" VerticalAlignment="Top" Width="158" 
+                                x:Name="ConnectionTimePicker" Format="Custom" FormatString="HH:mm" Grid.Column="2" ShowDropDownButton="False" Background="#FF93C1F1" Foreground="White" BorderBrush="White"/>
+
+        <GroupBox HorizontalAlignment="Left" Height="80" Margin="36,342,0,0" VerticalAlignment="Top" Width="400" Grid.ColumnSpan="3" Background="#FF93C1F1">
+            <StackPanel Name="stackPanel" Height="80" Orientation="Horizontal" Margin="0,-10,0,-25.2" Width="345">
+                <RadioButton x:Name="DepartureRadioButton" VerticalAlignment="Center" FontSize="20" IsChecked="True" VerticalContentAlignment="Center" Margin="50,18,0,38" 
+                             RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" BorderBrush="AliceBlue" Width="138" Background="White" Foreground="White" FontWeight="SemiBold">
+                    <RadioButton.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </RadioButton.RenderTransform>
+                    <TextBlock Text="{DynamicResource SearchConditions_DepartureRadioButton}" Margin="0,-5,0,0" Width="94"/>
+                </RadioButton>
+                <RadioButton x:Name="ArrivalRadioButton" HorizontalAlignment="Center" FontSize="20" VerticalContentAlignment="Center" Margin="30,16,0,36" 
+                             RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" Background="White" Foreground="White" FontWeight="SemiBold" Width="108">
+                    <RadioButton.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </RadioButton.RenderTransform>
+                    <TextBlock Text="{DynamicResource SearchConditions_ArrivalRadioButton}" Margin="0,-5,0,0" Width="82"/>
+                </RadioButton>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox HorizontalAlignment="Right" Height="350" Margin="0,72,49,0" VerticalAlignment="Top" Width="270" Grid.Column="2" BorderBrush="Black" BorderThickness="10" Background="#FF93C1F1">
+            <Grid HorizontalAlignment="Left" Height="330" VerticalAlignment="Top" Width="260" Margin="0,-14,0,-0.8">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="16*"/>
+                    <RowDefinition Height="119*"/>
+                </Grid.RowDefinitions>
+                <Label x:Name="TypesLabel" Content="{DynamicResource SearchConditions_TypesLabel}" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="25" Grid.RowSpan="2" Foreground="White" Grid.ColumnSpan="4" FontWeight="SemiBold"/>
+                <CheckBox x:Name="ExpressCheckBox" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" FontSize="15" Height="30" IsChecked="True" 
+                          Grid.Row="1" Foreground="White" Background="White" FontWeight="SemiBold">
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="1.75" ScaleY="1.75" />
+                    </CheckBox.LayoutTransform>
+                    <TextBlock Text="{DynamicResource SearchConditions_ExpressCheckBox}" Margin="0,-3,0,0"/>
+                </CheckBox>
+                <CheckBox x:Name="IntercityCheckBox" HorizontalAlignment="Left" Margin="5,50,0,0" VerticalAlignment="Top" FontSize="15" Height="30" IsChecked="True" 
+                          Grid.Row="1" Foreground="White" Background="White" Grid.ColumnSpan="4" FontWeight="SemiBold">
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="1.75" ScaleY="1.75" />
+                    </CheckBox.LayoutTransform>
+                    <TextBlock Text="{DynamicResource SearchConditions_IntercityCheckBox}" Margin="0,-3,0,0"/>
+                </CheckBox>
+                <CheckBox x:Name="RegionalCheckBox" HorizontalAlignment="Left" Margin="5,90,0,0" VerticalAlignment="Top" FontSize="15" Height="30" IsChecked="True" 
+                          Grid.Row="1" Foreground="White" Background="White" Grid.ColumnSpan="4" FontWeight="SemiBold">
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="1.75" ScaleY="1.75" />
+                    </CheckBox.LayoutTransform>
+                    <TextBlock Text="{DynamicResource SearchConditions_RegionalCheckBox}" Margin="0,-3,0,0"/>
+                </CheckBox>
+                <Label x:Name="ServicesLabel" Content="{DynamicResource SearchConditions_ServicesLabel}" HorizontalAlignment="Left" Margin="0,150,0,0" VerticalAlignment="Top" FontSize="25" Grid.Row="1" Foreground="White" FontWeight="SemiBold"/>
+                <CheckBox x:Name="WiFiCheckBox" HorizontalAlignment="Left" Margin="5,190,0,0" VerticalAlignment="Top" FontSize="14" Height="30" IsChecked="False" Grid.Row="1" 
+                          Foreground="White" Background="White" Grid.ColumnSpan="3" Width="52" FontWeight="SemiBold">
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="1.75" ScaleY="1.75" />
+                    </CheckBox.LayoutTransform>
+                    <TextBlock Text="{DynamicResource SearchConditions_WiFiCheckBox}" Margin="0,-4,0,0"/>
+                </CheckBox>
+                <CheckBox x:Name="BicycleCarriageCheckBox" HorizontalAlignment="Left" Margin="5,230,0,0" VerticalAlignment="Top" FontSize="14" Height="30" 
+                          IsChecked="False" Grid.Row="1" Foreground="White" Background="White" Width="144" FontWeight="SemiBold">
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="1.75" ScaleY="1.75" />
+                    </CheckBox.LayoutTransform>
+                    <TextBlock Text="{DynamicResource SearchConditions_BicycleCarriageCheckBox}" Margin="0,-4,0,0"/>
+                </CheckBox>
+            </Grid>
+        </GroupBox>
+        <Button x:Name="SearchButton" Content="{DynamicResource SearchConditions_SearchButton}" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="86.6,456,247,74" Height="70" Width="300" FontSize="40" Grid.Column="2" VerticalAlignment="Center" 
+                BorderBrush="White" Click="Search_Click" Command="{x:Static materialDesign:Transitioner.MoveNextCommand}" Foreground="#DDFFFFFF" FontWeight="SemiBold"/>
+        <Button x:Name="ReplaceStationsButton" HorizontalAlignment="Left" Margin="238.6,132,0,0" VerticalAlignment="Top" Width="30" Height="30" Click="Replace_Click" Grid.Column="2" RenderTransformOrigin="0.5,0.5">
+            <Button.Background>
+                <ImageBrush ImageSource="Resources/Change.png" Stretch="UniformToFill"/>
+            </Button.Background>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+    </Grid>
+</UserControl>

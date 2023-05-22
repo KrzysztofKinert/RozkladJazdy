@@ -1,0 +1,65 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:UI"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <system:String x:Key="MainWindow">Rozkład Jazdy</system:String>
+    <system:String x:Key="MainWindow_Closing">Czy na pewno?</system:String>
+    <system:String x:Key="MainWindow_Confirm">Potwierdź</system:String>
+
+    <system:String x:Key="SearchConditions_FromStationLabel">Od</system:String>
+    <system:String x:Key="SearchConditions_ToStationLabel">Do</system:String>
+    <system:String x:Key="SearchConditions_DateLabel">Data</system:String>
+    <system:String x:Key="SearchConditions_TimeLabel">Czas</system:String>
+    <system:String x:Key="SearchConditions_DefaultTextbox">Wpisz stację</system:String>
+    <system:String x:Key="SearchConditions_DepartureRadioButton">Odjazd</system:String>
+    <system:String x:Key="SearchConditions_ArrivalRadioButton">Przyjazd</system:String>
+    <system:String x:Key="SearchConditions_TypesLabel">Typy połączeń</system:String>
+    <system:String x:Key="SearchConditions_ExpressCheckBox">Ekspresowe</system:String>
+    <system:String x:Key="SearchConditions_IntercityCheckBox">Pospieszne</system:String>
+    <system:String x:Key="SearchConditions_RegionalCheckBox">Regionalne</system:String>
+    <system:String x:Key="SearchConditions_ServicesLabel">Wymagane usługi</system:String>
+    <system:String x:Key="SearchConditions_WiFiCheckBox">WiFi</system:String>
+    <system:String x:Key="SearchConditions_BicycleCarriageCheckBox">Przewóz rowerów</system:String>
+    <system:String x:Key="SearchConditions_SearchButton">Szukaj</system:String>
+
+    <system:String x:Key="SearchResults_FromStationLabel">Od:</system:String>
+    <system:String x:Key="SearchResults_ToStationLabel">Do:</system:String>
+    <system:String x:Key="SearchResults_DetailsColumn">Szczegóły</system:String>
+    <system:String x:Key="SearchResults_DepartureColumn">Odjazd</system:String>
+    <system:String x:Key="SearchResults_ArrivalColumn">Przyjazd</system:String>
+    <system:String x:Key="SearchResults_TimeColumn">Czas</system:String>
+    <system:String x:Key="SearchResults_DistanceColumn">Odległość</system:String>
+    <system:String x:Key="SearchResults_TypeColumn">Typ</system:String>
+    <system:String x:Key="SearchResults_ChangeSearchButton">Zmień zapytanie</system:String>
+    <system:String x:Key="SearchResults_NewSearchButton">Nowe zapytanie</system:String>
+    <system:String x:Key="SearchResults_Click">Kliknij</system:String>
+    <system:String x:Key="SearchResults_Express">Ekspresowy</system:String>
+    <system:String x:Key="SearchResults_Intercity">Pospieszny</system:String>
+    <system:String x:Key="SearchResults_Regional">Regionalny</system:String>
+
+    <system:String x:Key="ConnectionDetails">Szczegóły Połączenia</system:String>
+    <system:String x:Key="ConnectionDetails_NameLabel">Nazwa</system:String>
+    <system:String x:Key="ConnectionDetails_TypeLabel">Typ</system:String>
+    <system:String x:Key="ConnectionDetails_FromLabel">Od</system:String>
+    <system:String x:Key="ConnectionDetails_DepartureDateLabel">Odjazd</system:String>
+    <system:String x:Key="ConnectionDetails_ToLabel">Do</system:String>
+    <system:String x:Key="ConnectionDetails_ArrivalDateLabel">Przyjazd</system:String>
+    <system:String x:Key="ConnectionDetails_TimeLabel">Czas</system:String>
+    <system:String x:Key="ConnectionDetails_DistanceLabel">Odległość</system:String>
+    <system:String x:Key="ConnectionDetails_WiFiLabel">WiFi</system:String>
+    <system:String x:Key="ConnectionDetails_BicycleCarriageLabel">Przewóz rowerów</system:String>
+    <system:String x:Key="ConnectionDetails_Yes">Tak</system:String>
+    <system:String x:Key="ConnectionDetails_No">Nie</system:String>
+    <system:String x:Key="ConnectionDetails_IntermediateLabel">Stacje pośrednie</system:String>
+    <system:String x:Key="ConnectionDetails_FromColumn">Od</system:String>
+    <system:String x:Key="ConnectionDetails_DepartureColumn">Odjazd</system:String>
+    <system:String x:Key="ConnectionDetails_ToColumn">Do</system:String>
+    <system:String x:Key="ConnectionDetails_ArrivalColumn">Przyjazd</system:String>
+    <system:String x:Key="ConnectionDetails_TimeColumn">Czas</system:String>
+    <system:String x:Key="ConnectionDetails_DistanceColumn">Odległość</system:String>
+    <system:String x:Key="ConnectionDetails_CloseButton">Zamknij</system:String>
+    <system:String x:Key="ConnectionDetails_Express">Ekspresowy</system:String>
+    <system:String x:Key="ConnectionDetails_Intercity">Pospieszny</system:String>
+    <system:String x:Key="ConnectionDetails_Regional">Regionalny</system:String>
+</ResourceDictionary>

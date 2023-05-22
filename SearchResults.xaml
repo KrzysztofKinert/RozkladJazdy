@@ -1,0 +1,150 @@
+﻿<UserControl x:Class="UI.SearchResults"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:input="clr-namespace:System.Windows.Controls;assembly=DotNetProjects.Input.Toolkit"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:UI"
+    mc:Ignorable="d"
+    >
+
+    <Grid Height="600" Width="800">
+        <DataGrid x:Name="ResultsTable" Height="430" Margin="0,50,15,0" 
+                  VerticalAlignment="Top" Width="770" SelectionUnit="Cell" 
+                  RowHeaderWidth="0" AutoGenerateColumns="False" Background="Transparent" 
+                  RowBackground="White" BorderBrush="#FF2196F3" BorderThickness="2" RowHeight="30" TextBlock.TextAlignment="Center"
+                  VerticalScrollBarVisibility="Visible" CanUserAddRows="False" CanUserDeleteRows="False" 
+                  CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" CanUserSortColumns="False" FontSize="15">
+            <DataGrid.CellStyle>
+                <Style TargetType="DataGridCell">
+                    <EventSetter Event="PreviewMouseDown" Handler="RowSelected"/>
+                </Style>
+            </DataGrid.CellStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Details}" IsReadOnly="True" Width="1*" 
+                                    FontStyle="Italic" Foreground="#FF008BFF" FontWeight="Bold">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="{DynamicResource SearchResults_DetailsColumn}" />
+                    </DataGridTextColumn.Header>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="TextDecorations" Value="Underline"></Setter>
+                            <Setter Property="FrameworkElement.HorizontalAlignment" Value="Center"/>
+                            <Setter Property="FrameworkElement.VerticalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="Foreground" Value="#FF2196F3"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Departure}" Width="1.5*" IsReadOnly="True" Foreground="#FF2196F3">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="{DynamicResource SearchResults_DepartureColumn}" />
+                    </DataGridTextColumn.Header>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="FrameworkElement.HorizontalAlignment" Value="Center"/>
+                            <Setter Property="FrameworkElement.VerticalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="Foreground" Value="#FF2196F3"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Arrival}" Width="1.5*" IsReadOnly="True" Foreground="#FF2196F3">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="{DynamicResource SearchResults_ArrivalColumn}" />
+                    </DataGridTextColumn.Header>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="FrameworkElement.HorizontalAlignment" Value="Center"/>
+                            <Setter Property="FrameworkElement.VerticalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="Foreground" Value="#FF2196F3"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Time}" Width="1*" IsReadOnly="True" Foreground="#FF2196F3">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="{DynamicResource SearchResults_TimeColumn}" />
+                    </DataGridTextColumn.Header>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="FrameworkElement.HorizontalAlignment" Value="Center"/>
+                            <Setter Property="FrameworkElement.VerticalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="Foreground" Value="#FF2196F3"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Distance}" Width="1*" IsReadOnly="True" Foreground="#FF2196F3">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="{DynamicResource SearchResults_DistanceColumn}" />
+                    </DataGridTextColumn.Header>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="FrameworkElement.HorizontalAlignment" Value="Center"/>
+                            <Setter Property="FrameworkElement.VerticalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="Foreground" Value="#FF2196F3"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Type}" Width="1*" IsReadOnly="True" Foreground="#FF2196F3">
+                    <DataGridTextColumn.Header>
+                        <TextBlock Text="{DynamicResource SearchResults_TypeColumn}" />
+                    </DataGridTextColumn.Header>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="FrameworkElement.HorizontalAlignment" Value="Center"/>
+                            <Setter Property="FrameworkElement.VerticalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                            <Setter Property="Background" Value="White"/>
+                            <Setter Property="Foreground" Value="#FF2196F3"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="FromStationLabel" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Height="36" Width="315" FontSize="20" Foreground="#FF2196F3" FontWeight="SemiBold"/>
+        <Label x:Name="ToStationLabel" HorizontalAlignment="Left" Margin="330,5,0,0" VerticalAlignment="Top" Height="36" Width="315" FontSize="20" Foreground="#FF2196F3" FontWeight="SemiBold"/>
+        <Button x:Name="ChangeSearchButton" Content="{DynamicResource SearchResults_ChangeSearchButton}" Margin="100,0,405,53" Height="50" 
+                Width="295" FontSize="20" VerticalAlignment="Bottom" Command="{x:Static materialDesign:Transitioner.MovePreviousCommand}" Foreground="#DDFFFFFF" Background="#FF2196F3" BorderBrush="#FF2196F3" FontWeight="SemiBold"/>
+        <Button x:Name="NewSearchButton" Content="{DynamicResource SearchResults_NewSearchButton}" Margin="405,0,100,53" Height="50" 
+                Width="295" FontSize="20" Click="NewSearchButton_Click" VerticalAlignment="Bottom" Command="{x:Static materialDesign:Transitioner.MovePreviousCommand}" Background="#FF2196F3" BorderBrush="#FF2196F3" Foreground="#DDFFFFFF" FontWeight="SemiBold"/>
+    </Grid>
+</UserControl>
